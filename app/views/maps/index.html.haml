@@ -1,0 +1,18 @@
+%h3 Maps
+
+.span8
+  %h4= link_to 'Create new map', new_map_path
+
+
+.span8
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th View/Edit
+        %th Name
+
+    %tbody
+      - @maps.each do |map|
+        %tr
+          %td= link_to 'Edit', edit_map_path(map)
+          %td= map.name

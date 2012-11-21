@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119032053) do
+ActiveRecord::Schema.define(:version => 20121121012130) do
+
+  create_table "maps", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "width"
+    t.string   "states_fill"
+    t.string   "states_stroke"
+    t.string   "states_active_fill"
+    t.string   "states_active"
+    t.string   "line_stroke"
+    t.string   "line_stoke_type"
+    t.string   "point_fill"
+    t.string   "point_stroke"
+    t.string   "point_active_fill"
+    t.string   "point_active_stroke"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "kmlurl"
+    t.datetime "kmlupdated"
+    t.integer  "kmlstatus",           :default => 0
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"

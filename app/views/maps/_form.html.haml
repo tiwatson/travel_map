@@ -1,0 +1,19 @@
+= simple_form_for(@map, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'input-small' } } ) do |f|
+  = f.error_notification
+  = f.input :name, :input_html => { :class => 'input-medium' }
+
+  = f.input :kmlurl,  :input_html => { :class => 'input-xlarge' }
+  = f.input :width
+  = f.input :states_fill
+  = f.input :states_stroke
+  = f.input :states_active_fill
+  = f.input :states_active
+  = f.input :line_stroke
+  = f.input :line_stoke_type
+  = f.input :point_fill
+  = f.input :point_stroke
+  = f.input :point_active_fill
+  = f.input :point_active_stroke
+
+
+  = f.button :submit, 'Update', :class => 'btn-primary'

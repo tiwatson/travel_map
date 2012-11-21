@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+  load_and_authorize_resource
 
   def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.all
+    @user = current_user #User.all
   end
 
   def show
     @user = User.find(params[:id])
   end
   
+=begin
   def update
     authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
@@ -30,4 +31,6 @@ class UsersController < ApplicationController
       redirect_to users_path, :notice => "Can't delete yourself."
     end
   end
+=end
+
 end
