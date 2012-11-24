@@ -10,9 +10,21 @@
       %tr
         %th View/Edit
         %th Name
+        %th KML Status
+        %th Last updated
 
     %tbody
       - @maps.each do |map|
         %tr
-          %td= link_to 'Edit', edit_map_path(map)
+          %td
+            = link_to 'Edit', edit_map_path(map)
+            \|
+            = link_to 'View', map_path(map)
+
           %td= map.name
+          %td= map.kmlstatus
+          %td= map.kmlupdated.to_s
+          %td
+            %a.btn.btn-small{ :href => kml_update_map_path(map) }
+              %i.icon-refresh
+              Refresh KML

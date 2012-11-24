@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121012130) do
+ActiveRecord::Schema.define(:version => 20121124051357) do
 
   create_table "maps", :force => true do |t|
     t.integer  "user_id"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(:version => 20121121012130) do
     t.string   "kmlurl"
     t.datetime "kmlupdated"
     t.integer  "kmlstatus",           :default => 0
+    t.string   "token"
+    t.text     "visited_states"
+    t.string   "states_visited_fill"
   end
 
   create_table "roles", :force => true do |t|

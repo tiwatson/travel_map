@@ -1,19 +1,30 @@
+:css
+  .radio input[type="radio"], .checkbox input[type="checkbox"] { margin-left: -15px !important; }
+  .checkbox.inline + .checkbox.inline { margin-left: 0px; margin-right: 10px; }
+  .controls > .checkbox:first-child { margin-right: 10px; }
+
 = simple_form_for(@map, :html => { :class => 'form-horizontal' }, :defaults => { :input_html => { :class => 'input-small' } } ) do |f|
   = f.error_notification
   = f.input :name, :input_html => { :class => 'input-medium' }
 
   = f.input :kmlurl,  :input_html => { :class => 'input-xlarge' }
   = f.input :width
-  = f.input :states_fill
+
+  %h5 Colors
+
   = f.input :states_stroke
+  = f.input :states_fill
+  = f.input :states_visited_fill
   = f.input :states_active_fill
-  = f.input :states_active
   = f.input :line_stroke
-  = f.input :line_stoke_type
+  = f.input :line_stoke_type, :as => :select, :collection => [['Dashed Line','dashedarray'], ['Solid Line','solid']], :include_blank => false, :input_html => { :class => 'input-medium' }
   = f.input :point_fill
   = f.input :point_stroke
   = f.input :point_active_fill
   = f.input :point_active_stroke
 
+
+
+  = f.input :visited_states, :collection => us_states, :as => :check_boxes, :item_wrapper_class => 'inline'
 
   = f.button :submit, 'Update', :class => 'btn-primary'

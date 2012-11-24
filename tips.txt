@@ -1,2 +1,2 @@
 http://sirupsen.com/setting-up-unicorn-with-nginx/
-unicorn_rails -c /vagrant/travel_map/config/unicorn.rb -D
+bundle exec unicorn_rails -c /vagrant/travel_map/config/unicorn.rb -D

@@ -27,4 +27,20 @@ class MapsController < ApplicationController
     end
   end
 
+  def kml_update
+    @map = current_user.maps.find(params[:id])
+    @map.kml_update
+
+    redirect_to maps_path, :notice => 'KML data refreshed'
+  end
+
+  def regenerate
+    @map = current_user.maps.find(params[:id])
+    @map.js_generate
+    @map.css_generate
+
+    redirect_to map_path(@map), :notice => 'JS/CSS regenerated'
+  end
+
+
 end

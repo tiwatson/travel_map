@@ -24,3 +24,9 @@ gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+gem 'nokogiri'
+gem 'geocoder'
+gem 'json'
+gem 'diskcached'
+gem 'erubis'

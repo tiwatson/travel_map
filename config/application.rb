@@ -80,3 +80,28 @@ module TravelMap
     config.assets.version = '1.0'
   end
 end
+
+module Enumerable
+
+   def select_with_index
+      index = -1
+      (block_given? && self.class == Range || self.class == Array)  ?  select { |x| index += 1; yield(x, index) }  :  self
+   end
+
+   def select_with_index_blk(&block)
+      index = -1
+      (block && self.class == Range || self.class == Array)  ?  select { |x| index += 1; block.call(x, index) }  :  self
+   end
+
+end
+
+
+@@diskcache = Diskcached.new(Rails.root.join('geocoder_cache'),  (86400*365))
+
+require 'fileutils'
+require 'open-uri'
+
+def us_states
+  [["Alabama", "alabama"], ["Alaska", "alaska"], ["Arizona", "arizona"], ["Arkansas", "arkansas"], ["California", "california"], ["Colorado", "colorado"], ["Connecticut", "connecticut"], ["Delaware", "delaware"], ["District of Columbia", "district_of_columbia"], ["Florida", "florida"], ["Georgia", "georgia"], ["Hawaii", "hawaii"], ["Idaho", "idaho"], ["Illinois", "illinois"], ["Indiana", "indiana"], ["Iowa", "iowa"], ["Kansas", "kansas"], ["Kentucky", "kentucky"], ["Louisiana", "louisiana"], ["Maine", "maine"], ["Maryland", "maryland"], ["Massachusetts", "massachusetts"], ["Michigan", "michigan"], ["Minnesota", "minnesota"], ["Mississippi", "mississippi"], ["Missouri", "missouri"], ["Montana", "montana"], ["Nebraska", "nebraska"], ["Nevada", "nevada"], ["New Hampshire", "new_hampshire"], ["New Jersey", "new_jersey"], ["New Mexico", "new_mexico"], ["New York", "new_york"], ["North Carolina", "north_carolina"], ["North Dakota", "north_dakota"], ["Ohio", "ohio"], ["Oklahoma", "oklahoma"], ["Oregon", "oregon"], ["Pennsylvania", "pennsylvania"], ["Puerto Rico", "puerto_rico"], ["Rhode Island", "rhode_island"], ["South Carolina", "south_carolina"], ["South Dakota", "south_dakota"], ["Tennessee", "tennessee"], ["Texas", "texas"], ["Utah", "utah"], ["Vermont", "vermont"], ["Virginia", "virginia"], ["Washington", "washington"], ["West Virginia", "west_virginia"], ["Wisconsin", "wisconsin"], ["Wyoming", "wyoming"]]
+end
+

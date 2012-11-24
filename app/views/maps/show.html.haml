@@ -2,3 +2,14 @@
   Map
   = @map.name
 
+
+
+
+#d3StateMap{:style => 'border: #ccc 1px solid;'}
+%script{:src => @map.js_url}
+
+
+%div{:style => ''}
+
+%p{:style => 'margin-top: 100px;'}
+  = link_to 'Regen', regenerate_map_path(@map)

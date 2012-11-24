@@ -5,5 +5,10 @@ TravelMap::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
-  resources :maps
+  resources :maps do
+    member do
+      get 'kml_update'
+      get 'regenerate'
+    end
+  end
 end

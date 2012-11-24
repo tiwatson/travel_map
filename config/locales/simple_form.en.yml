@@ -14,11 +14,30 @@ en:
     labels:
       map:
         kmlurl: 'Url to kml file'
-        states_fill: 'Color of unvisisted states'
-        states_stroke: 'Color of lines between states'
+        states_fill: 'Unvisisted states'
+        states_stroke: 'Lines between states'
+        states_visited_fill: 'Visisted states'
+        states_active_fill: 'Active/Clicked on state'
+        line_stroke: 'Line/Path'
+        line_stoke_type: 'Line/Path Type'
+        point_fill: 'Marker/Point inner'
+        point_stroke: 'Marker/Point border'
+        point_active_fill: 'Active Marker inner'
+        point_active_stroke: 'Active Marker border'
+
     hints:
       map:
         name: 'Internal use only'
+        states_fill: 'Default: #ccc'
+        states_stroke: 'Default: #fff'
+        states_visited_fill: 'Default: #aaa'
+        states_active_fill: 'Default: #36648B'
+        line_stroke: 'Default: #222'
+        line_stoke_type: 'Default: Dashed'
+        point_fill: 'Default: #8B3639'
+        point_stroke: 'Default: #fff'
+        point_active_fill: 'Default: #142635'
+        point_active_stroke: 'Default: #fff'
     # Labels and hints examples
     # labels:
     #   defaults:
