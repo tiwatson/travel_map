@@ -30,3 +30,6 @@ gem 'geocoder'
 gem 'json'
 gem 'diskcached'
 gem 'erubis'
+
+gem 'capistrano'
+gem 'capistrano-ext'
