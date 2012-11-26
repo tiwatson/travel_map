@@ -69,7 +69,8 @@ d3.select('#d3StateMap').append('style')
   .html(
     "\n" +
     ".states_visited { fill: <%= map.states_visited_fill %>; } \n" +
-    ".state_active { fill: <%= map.states_active_fill %>; }\n"
+    ".state_active { fill: <%= map.states_active_fill %>; }\n" +
+    "#stateLabel { font-size: 28px; letter-spacing: 0.1em; color: <%= map.state_label_color %>; fill: <%= map.state_label_color %>; }\n"
   );
 
 var svg = d3.select("#d3StateMap").append("svg")

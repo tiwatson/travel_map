@@ -33,3 +33,4 @@ gem 'erubis'
 
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'fcgi', :group => [:production]

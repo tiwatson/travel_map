@@ -19,12 +19,6 @@ body {
   fill: #142635;
 }
 
-#stateLabel {
-  fill: #688aa8;
-  font-size: 28px;
-  letter-spacing: 0.1em;
-}
-
 #infoBar {
   position:absolute;
   color: white;
