@@ -3,7 +3,7 @@ class Map < ActiveRecord::Base
 
   serialize :visited_states, Array
 
-  attr_accessible :id, :kmlurl, :visited_states, :line_stoke_type, :line_stroke, :name, :point_active_fill, :point_active_stroke, :point_fill, :point_stroke, :states_active, :states_active_fill, :states_fill, :states_stroke, :user_id, :width, :states_visited_fill
+  attr_accessible :id, :kmlurl, :visited_states, :line_stoke_type, :line_stroke, :name, :point_active_fill, :point_active_stroke, :point_fill, :point_stroke, :states_active, :states_active_fill, :states_fill, :states_stroke, :user_id, :width, :states_visited_fill, :state_label, :state_label_color
 
   validates_uniqueness_of :token
 
@@ -147,6 +147,7 @@ class Map < ActiveRecord::Base
       self.point_stroke = '#fff'
       self.point_active_fill = '#142635'
       self.point_active_stroke = '#fff'
+      self.state_label_color = '#688aa8'
 
     end
   end

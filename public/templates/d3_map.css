@@ -7,27 +7,6 @@ body {
   position: relative;
 }
 
-.background {
-  fill: none;
-  pointer-events: all;
-}
-
-
-.states {
-  //fill: #ccc;
-  //stroke: #fff;
-  stroke-width: 1px;
-}
-
-.states_visited {
-  //fill: #aaa;
-  //stroke-width: 1px;
-}
-
-.state_active {
-  fill: #36648B; //steelblue;
-}
-
 .point {
   fill: #8B3639;
   stroke: #fff;

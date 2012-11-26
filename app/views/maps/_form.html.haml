@@ -23,7 +23,8 @@
   = f.input :point_active_fill
   = f.input :point_active_stroke
 
-
+  = f.input :state_label, :inline_label => 'Yes, show labels'
+  = f.input :state_label_color
 
   = f.input :visited_states, :collection => us_states, :as => :check_boxes, :item_wrapper_class => 'inline'
 

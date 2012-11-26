@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124051357) do
+ActiveRecord::Schema.define(:version => 20121125003158) do
 
   create_table "maps", :force => true do |t|
     t.integer  "user_id"
@@ -27,14 +27,16 @@ ActiveRecord::Schema.define(:version => 20121124051357) do
     t.string   "point_stroke"
     t.string   "point_active_fill"
     t.string   "point_active_stroke"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "kmlurl"
     t.datetime "kmlupdated"
     t.integer  "kmlstatus",           :default => 0
     t.string   "token"
     t.text     "visited_states"
     t.string   "states_visited_fill"
+    t.boolean  "state_label",         :default => true
+    t.string   "state_label_color"
   end
 
   create_table "roles", :force => true do |t|

@@ -24,6 +24,7 @@ en:
         point_stroke: 'Marker/Point border'
         point_active_fill: 'Active Marker inner'
         point_active_stroke: 'Active Marker border'
+        visited_states: 'Additional visisted states'
 
     hints:
       map:
@@ -38,6 +39,7 @@ en:
         point_stroke: 'Default: #fff'
         point_active_fill: 'Default: #142635'
         point_active_stroke: 'Default: #fff'
+        visited_states: 'The map defines a visited state as a state that contains a point or marker. If your path traverses a state that contains no marker, you can select the state above and it will be shown on the map as "visited"'
     # Labels and hints examples
     # labels:
     #   defaults:

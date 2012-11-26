@@ -66,22 +66,28 @@ d3.select("#infoBarStatusDays").text(Math.ceil((today.getTime()-sdate.getTime())
 
 d3.select('#d3StateMap').append('style')
   .attr('type', 'text/css')
-  .html('.states_visited { fill: <%= map.states_visited_fill %>; }');
+  .html(
+    "\n" +
+    ".states_visited { fill: <%= map.states_visited_fill %>; } \n" +
+    ".state_active { fill: <%= map.states_active_fill %>; }\n"
+  );
 
 var svg = d3.select("#d3StateMap").append("svg")
     .attr("width", width)
     .attr("height", height);
 
 svg.append("rect")
-    .attr("class", "background")
     .attr("width", width)
     .attr("height", height)
+    .style('fill', 'none')
+    .style('pointer-events', 'all')
     .on("click", stateClick);
 
 var states = svg.append("svg:g")
     .attr("id", "states")
     .style('fill', '<%= map.states_fill %>')
-    .style('stroke', '<%= map.states_stroke %>');
+    .style('stroke', '<%= map.states_stroke %>')
+    .style('stroke-width', '1');
 
 var track = svg.append("svg:g")
     .attr("id", "track");
@@ -218,10 +224,11 @@ function stateClick(d) {
   if (typeof d.properties.offset_d !== 'undefined') { deg = d.properties.offset_d }
 
 
-  text.transition().duration(1000).attr('y',ly).attr('x', lx)
-    .attr("transform", "translate(0,0) rotate("+ deg + "," + lx + "," + ly + ")")
-    .text(d.properties.name);
-
+  <% if map.state_label? %>
+    text.transition().duration(1000).attr('y',ly).attr('x', lx)
+      .attr("transform", "translate(0,0) rotate("+ deg + "," + lx + "," + ly + ")")
+      .text(d.properties.name);
+  <% end %>
 
   } else {
     text.attr('y',0).attr('x', 0).attr("transform", "translate(0,0) rotate(0,0,0)").text('');
