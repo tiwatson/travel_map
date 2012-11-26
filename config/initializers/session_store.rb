@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-TravelMap::Application.config.session_store :cookie_store, :key => '_travel_map_session'
+TravelMap::Application.config.session_store :cookie_store, key: '_travel_map_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information

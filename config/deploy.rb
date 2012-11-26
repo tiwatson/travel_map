@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :shell, '/bin/bash'
-set :default_environment, { 'PATH' => "/home/watsonswander/.gems/bin:/usr/lib/ruby/gems/1.8/bin/:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/ruby/gems/1.8/bin/bundle" }
+set :default_environment, { 'PATH' => "/home/watsonswander/.rvm/gems/ruby-1.9.3-p327/bin:/home/watsonswander/.rvm/gems/ruby-1.9.3-p327@global/bin:/home/watsonswander/.rvm/rubies/ruby-1.9.3-p327/bin:/home/watsonswander/.rvm/bin:/home/watsonswander/.gems/bin:/usr/lib/ruby/gems/1.8/bin/:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/home/watsonswander/.rvm/gems/ruby-1.9.3-p327@global/bin/bundle" }
 set :application, "travel_map"
 set :scm, :git
 set :repository,  "git@github.com:tiwatson/travel_map.git"
