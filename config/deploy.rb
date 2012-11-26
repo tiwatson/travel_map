@@ -1,6 +1,7 @@
 require "bundler/capistrano"
 
-set :default_environment, { 'PATH' => '$PATH:/usr/lib/ruby/gems/1.8/bin//bundle' }
+set :shell, '/bin/bash'
+set :default_environment, { 'PATH' => '$PATH:/usr/lib/ruby/gems/1.8/bin/bundle' }
 set :application, "travel_map"
 set :scm, :git
 set :repository,  "git@github.com:tiwatson/travel_map.git"
