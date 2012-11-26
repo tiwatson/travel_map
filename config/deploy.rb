@@ -11,6 +11,16 @@ set :use_sudo, false
 server "watsonswander.com", :app, :web, :db, :primary => true
 set :deploy_to, "/home/watsonswander/travelmap.tiwatson.com/"
 
+namespace :deploy do
+  after "deploy:update_code", :link_production_db
+end
+
+# database.yml task
+desc "Link in the database.yml"
+task :link_production_db do
+  run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+end
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
